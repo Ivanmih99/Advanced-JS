@@ -33,7 +33,6 @@ const avgAgeAndGrade = (users, element) => {
     .reduce((acc, num) => {
       return acc + num;
     }, 0);
-  console.log(sum);
   let avgGrade = 0;
   users.forEach((user) => (avgGrade += user.averageGrade));
 
