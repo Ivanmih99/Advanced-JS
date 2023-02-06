@@ -28,13 +28,17 @@ const sendUsers = async () => {
 sendUsers();
 
 const avgAgeAndGrade = (users, element) => {
-  let avgAge = 0;
-  users.forEach((user) => (avgAge += user.age));
+  const sum = users
+    .map((student) => student.age)
+    .reduce((acc, num) => {
+      return acc + num;
+    }, 0);
+  console.log(sum);
   let avgGrade = 0;
   users.forEach((user) => (avgGrade += user.averageGrade));
 
   element.innerHTML += `<div><p>Average age of all students: ${
-    avgAge / users.length
+    sum / users.length
   }</p>
 	<p>Average grade of all students: ${avgGrade / users.length}</p></div>`;
 };
